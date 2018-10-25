@@ -11,51 +11,30 @@
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </head>
 
+</div>
+
 <body>
     <div id="root"></div>
+    <div id="challenge-node"></div>
 
     <script type="text/babel">
-    const e = React.createElement;
+        class MyComponet extends React.Component{
+            constructor(props){
+                super(props);
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>This is my first React componet, 
+                        not really </h1>
+                    </div>
 
-    const TypeOfFruit = () =>{
-        return (
-        <div>
-            <h2>Fruits:</h2>
-            <ul>
-                <li>Apples</li>
-                <li>Blueberries</li>
-                <li>Strawberries</li>
-                <li>Bananas</li>
-            </ul>
-        </div>
-        )
-    }
+                )
+            };
+        };
+         const domContainer = document.querySelector('#challenge-node');
+        ReactDOM.render(<MyComponet /> , (domContainer))
 
-    const Fruits = () => {
-        return (
-            <div>
-                < TypeOfFruit />
-            </div>
-        );
-    };
-
-    class TypesOfFood extends React.Component {
-        constructor(props) {
-            super(props);
-        }
-        render() {
-            return (
-                <div>
-                    <h1>Types of Food:</h1>
-                    < Fruits />
-                </div>
-
-            );
-        }
-    };
-        
-    const domContainer = document.querySelector("#root");
-    ReactDOM.render(e(TypesOfFood), domContainer);
 
     </script>
     <!--
